@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>முத்து பேங்கர்ஸ் – தங்க நகை கடன்</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ════════ NAVBAR ════════ -->
+<nav class="site-nav">
+  <div class="container">
+    <div class="nav-top">
+
+      <!-- LEFT: Logo -->
+      <div class="nav-logo">
+        <img src="logo2_transparent.png" alt="Muthu Bankers">
+      </div>
+
+      <!-- CENTER: Brand title image -->
+      <div class="nav-brand-slot">
+        <img src="logo finalized@2x.png" alt="Muthu Bankers">
+      </div>
+
+      <!-- RIGHT: Badge + Hamburger -->
+      <div class="nav-right">
+        <div class="years-badge">
+          <span class="yb-num">15+</span>
+          <span class="yb-txt">ஆண்டு<br>களாக</span>
+        </div>
+        <button class="nav-toggler" id="navToggler" aria-label="menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NAV LINKS -->
+  <div class="nav-links-row">
+    <div class="container">
+      <div class="nav-collapse" id="navCollapse">
+        <ul class="navbar-nav flex-row justify-content-center gap-1 py-1 w-100">
+          <li class="nav-item"><a class="nav-link" href="#hero">முகப்பு</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">எங்களை பற்றி</a></li>
+            <li class="nav-item"><a class="nav-link" href="#offers">சலுகைகள்</a></li>
+            <li class="nav-item"><a class="nav-link" href="#deposit">டெபாசிட் திட்டம்</a></li>
+              <li class="nav-item"><a class="nav-link" href="#rates">வட்டி விகிதம்</a></li>
+
+          
+       
+           
+          <li class="nav-item"><a class="nav-link" href="#jobs">வேலைவாய்ப்பு</a></li>
+          <li class="nav-item"><a class="nav-link" href="#review">வாடிக்கையாளர் கருத்துகள்</a></li>
+       
+          <li class="nav-item"><a class="nav-link" href="#contact">தொடர்பு</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Vinayagar — outside navbar, desktop only (hidden via CSS on mobile) -->
+<div class="vinayagar-hanging">
+  <img src="vinayagar.png" alt="Vinayagar">
+</div>
+
+<!-- ════════ HERO ════════ -->
+<section id="hero">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <!-- Text -->
+      <div class="col-lg-6 order-lg-1 order-2 hero-z">
+        <div class="hero-eyebrow"><i class="bi bi-award-fill"></i> 15+ ஆண்டுகளாக நம்பகமான சேவை</div>
+        <p class="hero-sub">தங்க நகை கடன் சேவையில் சிறந்த நிறுவனம்</p>
+        <h1 class="hero-title">உங்கள் தங்க நகைக்கு<br/><em>அதிகபட்ச மதிப்பு</em></h1>
+        <a href="#contact" class="btn-gold">இப்போதே பெறுங்கள்</a>
+      </div>
+      <!-- Coin -->
+      <div class="col-lg-6 order-lg-2 order-1 d-flex justify-content-center hero-z">
+        <div class="coin-stage">
+          <div class="coin-ring"></div>
+          <div class="orb">💰</div>
+          <div class="orb">🪙</div>
+          <div class="coin-main">
+            <div class="coin-face">🪙</div>
+          </div>
+          <div class="hsc hsc-1">
+            <div class="hv"><span class="goldRate">₹ ......./ கிராம்</span></div>
+            <div class="hl">இன்றைய தங்க விலை (22K)</div>
+          </div>
+          <div class="hsc hsc-2">
+            <div class="hv">12% முதல்</div>
+            <div class="hl">குறைந்த வட்டி விகிதம்</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ STATS BAR ════════ -->
+<div class="stats-bar" id="statsBar">
+  <div class="container">
+    <div class="row g-0 text-center">
+      <div class="col stat-item py-2">
+        <span class="si-num cnt-15"></span>
+        <span class="si-lbl">ஆண்டுகள் அனுபவம்</span>
+      </div>
+      <div class="col stat-item py-2">
+        <span class="si-num cnt-3"></span>
+        <span class="si-lbl">கிளைகள்</span>
+      </div>
+      <div class="col stat-item py-2">
+        <span class="si-num cnt-100"></span>
+        <span class="si-lbl">பாதுகாப்பான சேவை</span>
+      </div>
+      <div class="col stat-item py-2">
+        <span class="si-num cnt-12"></span>
+        <span class="si-lbl">குறைந்த வட்டி</span>
+      </div>
+      <div class="col stat-item py-2">
+        <span class="cnt-10000 si-num" id="cnt10000"></span>
+        <span class="si-lbl">மேல் நம்பிக்கையான வாடிக்கையாளர்கள்</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ ABOUT ════════ -->
+<section id="about">
+  <div class="container">
+    <div class="text-center mb-5 about-intro">
+      <div class="sec-eye">🏢 எங்களை பற்றி</div>
+      <h2 class="sec-h2">நம்பிக்கையான <span>தங்க கடன்</span> சேவை</h2>
+      <div class="gold-rule cx"></div>
+      <p class="sec-p">கடந்த 15+ ஆண்டுகளாக முத்து பேங்கர்ஸ், நம்பிக்கை மற்றும் நேர்மையுடன் தங்க அடகு கடன் சேவையில் சிறந்த நிறுவனமாக செயல்பட்டு வருகிறது.</p>
+    </div>
+
+    <!-- ROW 1 -->
+    <div class="about-row">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-5">
+          <div class="about-visual">
+            <div class="av-ring r1"></div>
+            <div class="av-ring r2"></div>
+            <img src="cashforgold.png" class="av-img" alt="About us">
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="about-card">
+            <div class="about-icon">✨</div>
+            <h3 class="sec-h3">எங்கள் சிறப்பம்சங்கள்</h3>
+            <div class="gold-rule"></div>
+            <ul class="about-ul">
+              <li><i class="bi bi-check-circle-fill"></i>உங்கள் நகைக்கு உடனடி பணம் — சில நிமிடங்களில்</li>
+              <li><i class="bi bi-check-circle-fill"></i>குறைந்த வட்டி விகிதம் — 12% முதல்</li>
+              <li><i class="bi bi-check-circle-fill"></i>100% பாதுகாப்பான மற்றும் வெளிப்படையான சேவை</li>
+              <li><i class="bi bi-check-circle-fill"></i>எளிதான மாதாந்திர தவணைகள்</li>
+              <li><i class="bi bi-check-circle-fill"></i>விவசாயிகள் & தொழில் புரிபவர்களுக்கு சிறப்பு கடன் திட்டங்கள்</li>
+              <li><i class="bi bi-check-circle-fill"></i>2 வருடம் வரை நகைகளை ஏலத்திலிருந்து பாதுகாப்பது</li>
+              <li><i class="bi bi-check-circle-fill"></i>பிற வங்கிகளிலிருந்து மாற்றி வைக்கும் வசதி</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="about-row">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-7 order-lg-1 order-2">
+          <div class="about-card">
+            <div class="about-icon">💎</div>
+            <h3 class="sec-h3">எங்கள் நோக்கம்</h3>
+            <div class="gold-rule"></div>
+            <ul class="about-ul">
+              <li><i class="bi bi-arrow-right-circle-fill"></i>கோடிக்கணக்கான மக்களின் வாழ்வாதாரத்தை தங்க நகைக் கடன் மூலம் மேம்படுத்துவது.</li>
+              <li><i class="bi bi-arrow-right-circle-fill"></i>விரைவான, நம்பகமான மற்றும் வெளிப்படையான நிதி சேவை நிறுவனமாக உருவெடுப்பது.</li>
+              <li><i class="bi bi-arrow-right-circle-fill"></i>வாடிக்கையாளர்களின் நிதி தேவைகளை பூர்த்தி செய்து குறைந்த வட்டியில் நகைக் கடன் வழங்குவது.</li>
+              <li><i class="bi bi-arrow-right-circle-fill"></i>விவசாயிகள், சிறு மற்றும் குறு தொழில் புரிபவர்களுக்கு முன்னுரிமை அளிப்பது.</li>
+              <li><i class="bi bi-arrow-right-circle-fill"></i>அனைத்து செயல்பாடுகளிலும் நேர்மை மற்றும் பொறுப்புணர்வுடன் செயல்படுவது.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-5 order-lg-2 order-1">
+          <div class="about-visual">
+            <div class="av-ring r1"></div>
+            <div class="av-ring r2"></div>
+            <img src="consultation.png" class="av-img" alt="Diamond">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 3 -->
+    <div class="about-row">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-5">
+          <div class="about-visual">
+            <div class="av-ring r1"></div>
+            <div class="av-ring r2"></div>
+            <img src="steptosuccess.png" class="av-img" alt="About us">
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="about-card">
+            <div class="about-icon">🎯</div>
+            <h3 class="sec-h3">எங்கள் இலக்கு</h3>
+            <div class="gold-rule"></div>
+            <ul class="about-ul">
+              <li><i class="bi bi-star-fill"></i>தங்க நகைக்கடன் கொடுப்பதில் தொடர்ந்து முதலிடத்தில் இருப்பதும் வாடிக்கையாளர்களின் நம்பிக்கையை நிலைநிறுத்துவதும் எங்கள் இலக்கு.</li>
+              <li><i class="bi bi-star-fill"></i>கிராமத்திலும் நகர்ப்புறங்களிலும் அதிக கிளைகளை திறந்து நிதிசேவை அனைத்து மக்களுக்கும் கிடைக்கச் செய்வது.</li>
+              <li><i class="bi bi-star-fill"></i>டிஜிட்டல் சேவைகளை மேம்படுத்தி வாடிக்கையாளர்களுக்கு எளிதான மற்றும் விரைவான சேவையை வழங்குவது.</li>
+              <li><i class="bi bi-star-fill"></i>வாடிக்கையாளர்களின் பொருளாதாரத்தை உயர்த்த உதவும் நிறுவனமாக தொடர்ந்து இருப்பது.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ OFFERS ════════ -->
+<section id="offers">
+  <div class="container position-relative" style="z-index:1">
+    <div class="text-center mb-5">
+      <div class="sec-eye">🔥 சிறப்பு சலுகைகள்</div>
+      <h2 class="sec-h2">தங்க கடன் <span>சிறப்பு சலுகைகள்</span></h2>
+      <div class="gold-rule cx"></div>
+    </div>
+
+    <div id="carouselExample" class="carousel slide mb-4" data-bs-ride="carousel">
+      <div class="carousel-inner" id="bannerCarousel"></div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    
+  </div>
+</section>
+<!--  ======== DEPOSIT ======== -->
+ <section id="deposit">
+  <div class="section-title text-center mb-4">
+  <h2>எங்களின் டெபாசிட் திட்டம்</h2>
+
+</div>
+    <div class="bento">
+    
+       
+      <!-- Feature tiles -->
+      <div class="bento-tile">
+        <div class="bt-h">💰 எங்களது வைப்பு திட்டம் பாதுகாப்பானது மற்றும் லாபகரமானது</div>
+        <p class="bt-p"></p>
+      </div>
+      <div class="bento-tile">
+        <div class="bt-pct">12%</div>
+        <div class="bt-h">💰 வட்டி விகிதம்</div>
+        <p class="bt-p"></p>
+      </div>
+      <div class="bento-tile">
+        <div class="bt-pct">13%</div>
+        <div class="bt-h">👴 சீனியர் சிட்டிசன்</div>
+        <p class="bt-p">50 வயதுக்கு மேற்பட்டவர்களுக்கு சிறப்பு வட்டி விகிதம்.</p>
+      </div>
+      
+      <div class="bento-tile">
+        <div class="bt-h" style="font-size:1rem;margin-bottom:10px">💥 அதிரடி வட்டி சலுகை</div>
+        <p class="bt-p">வேறெங்கும் இல்லாத வட்டி.  </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ════════ RATES ════════ -->
+<section id="rates">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="sec-eye">💰 வட்டி விகிதம்</div>
+      <h2 class="sec-h2">தங்க கடன் <span>கணக்கிடு</span></h2>
+      <div class="gold-rule cx"></div>
+    </div>
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-5">
+        <div class="rate-card">
+          <h4>📋 இன்றைய தங்க விலை</h4>
+          <div class="price-box">
+            <div class="pb-lbl">22 கேரட் தங்கம்</div>
+            <div class="hv"><span class="goldRate">₹ ......./ கிராம்</span></div>
+            
+            <div class="pb-note">* சந்தை நிலவரத்தைப் பொறுத்து மாறுபடும்</div>
+          </div>
+          <div class="row g-3">
+            <div class="col-6"><div class="mini-b"><div class="ml">குறைந்தபட்ச வட்டி</div><div class="mv">12%</div></div></div>
+            <div class="col-6"><div class="mini-b"><div class="ml">ஒரு பைசா திட்டம்</div><div style="font-size:.92rem;color:var(--maroon);font-weight:800;margin-top:8px">✅ உண்டு</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="rate-card">
+          <h4>🏦 ஏன் முத்து பேங்கர்ஸ்?</h4>
+          <div class="why-wrap">
+            <div class="wi"><div class="wt">⚡ உடனடி கடன்</div><p>சில நிமிடங்களில் பணம் உங்கள் கைகளில்</p></div>
+            <div class="wi"><div class="wt">🏠 நெருங்கிய கிளை</div><p>தென்காசி, பண்போழில், ஆயக்குடி</p></div>
+            <div class="wi"><div class="wt">📄 எளிய ஆவணம்</div><p>ஆதார் கார்டு மட்டும் போதும்</p></div>
+            <div class="wi"><div class="wt">💬 WhatsApp சேவை</div><p>நேரடியாக தொடர்பு கொண்டு கடன் பெறலாம்</p></div>
+            <div class="wi"><div class="wt">🔒 2 ஆண்டு பாதுகாப்பு</div><p>ஏலத்திலிருந்து நகைகளை பாதுகாக்கிறோம்</p></div>
+            <div class="wi"><div class="wt">🔄 வங்கி மாற்றம்</div><p>பிற வங்கிகளிலிருந்து மாற்றி வைக்கலாம்</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ JOBS ════════ -->
+<section id="jobs">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="sec-eye">👥 வேலைவாய்ப்பு</div>
+      <h2 class="sec-h2"><span> பணியாளர்கள் தேவை</span></h2>
+      <div class="gold-rule cx"></div>
+    </div>
+    <div class="jobs-layout">
+      <div class="jobs-left">
+        <div class="jobs-cta-box">
+          <span class="jobs-big-emoji">🏆</span>
+          <h3 class="sec-h3" style="margin-bottom:10px">முத்து பேங்கர்ஸில் சேருங்கள்</h3>
+          <p class="sec-p" style="font-size:.9rem;margin-bottom:24px">15+ ஆண்டுகள் நம்பகமான நிறுவனத்தில் உங்கள் வாழ்க்கையை வடிவமைக்க வாய்ப்பு.</p>
+          <a href="https://wa.me/918643810838" class="btn-gold" target="_blank" style="font-size:.9rem;padding:12px 24px">
+            <i class="bi bi-whatsapp me-2"></i>விண்ணப்பிக்க
+          </a>
+        </div>
+      </div>
+      <div class="jobs-right">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span><i class="bi bi-person-badge-fill me-2" style="color:var(--gold)"></i>யார் விண்ணப்பிக்கலாம்?</span>
+            <i class="bi bi-chevron-down faq-arrow"></i>
+          </div>
+          <div class="faq-a">எங்கள் முத்து பேங்கர்ஸ் நிறுவனத்தில் ஆண் மற்றும் பெண் பணியாளர்கள் தேவை. ஏதேனும் ஒரு பட்டப்படிப்பு (Any Degree) முடித்தவர்கள் வரலாம்.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span><i class="bi bi-mortarboard-fill me-2" style="color:var(--gold)"></i>கல்வி தகுதி என்ன?</span>
+            <i class="bi bi-chevron-down faq-arrow"></i>
+          </div>
+          <div class="faq-a">ஏதேனும் ஒரு பட்டப்படிப்பு (Any Degree) முடித்திருந்தால் போதும். அனுபவம் இல்லாதவர்களும் விண்ணப்பிக்கலாம்.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span><i class="bi bi-geo-alt-fill me-2" style="color:var(--gold)"></i>எங்கே நேரில் வரவேண்டும்?</span>
+            <i class="bi bi-chevron-down faq-arrow"></i>
+          </div>
+          <div class="faq-a">ஆர்வமுள்ளவர்கள் தென்காசி, பண்போழில் அல்லது ஆயக்குடி கிளையில் நேரில் வந்து தொடர்பு கொள்ளலாம்.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span><i class="bi bi-telephone-fill me-2" style="color:var(--gold)"></i>எப்படி தொடர்பு கொள்வது?</span>
+            <i class="bi bi-chevron-down faq-arrow"></i>
+          </div>
+          <div class="faq-a">மேலும் விவரங்களுக்கு <strong>86438 10838</strong> என்ற தொலைபேசி எண்ணை அழைக்கவும் அல்லது WhatsApp மூலம் தொடர்பு கொள்ளலாம்.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span><i class="bi bi-currency-rupee me-2" style="color:var(--gold)"></i>சம்பளம் / சலுகைகள் என்ன?</span>
+            <i class="bi bi-chevron-down faq-arrow"></i>
+          </div>
+          <div class="faq-a">தகுதிக்கேற்ற சம்பளம் மற்றும் சிறப்பு சலுகைகள் வழங்கப்படும். விவரங்களுக்கு நேரில் வந்து பேசலாம்.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <section id="review">
+      <h2 class="review-heading">உங்கள் நம்பிக்கை – எங்கள் பெருமை</h2>
+      <div class="review-container">
+        <div class="review-card">
+          <div class="stars" data-rating="5"></div>
+          <p>"மிகவும் நல்ல சேவை. வேகமாகவும் நம்பிக்கைக்குரியதாகவும் உள்ளது!"</p>
+          <h4>- ரவி</h4>
+        </div>
+        <div class="review-card">
+          <div class="stars" data-rating="4"></div>
+          <p>"சிறந்த நிதி சேவை. மிகவும் நட்பான அணுகுமுறை."</p>
+          <h4>- பிரியா</h4>
+        </div>
+        <div class="review-card">
+          <div class="stars" data-rating="5"></div>
+          <p>"15+ ஆண்டுகளாக அனுபவம் நிச்சயமாக தெரிகிறது!"</p>
+          <h4>- குமார்</h4>
+        </div>
+      </div>
+      <br>
+      <p class="one-line">நம்பிக்கையுடன் அடகு வையுங்கள் – இன்று பணம் பெறுங்கள்!</p>
+      <br>
+      <div class="handshake">🤝</div>
+    </section>
+
+<!-- ════════ CONTACT + FOOTER ════════ -->
+<section id="contact">
+  <div class="container position-relative" style="z-index:1">
+    <div class="text-center mb-5">
+      <div class="sec-eye">📞 தொடர்பு கொள்ள</div>
+      <h2 class="sec-h2">எங்கள் <span>கிளைகளை</span> அணுகுங்கள்</h2>
+      <div class="gold-rule cx"></div>
+      <p class="sec-p">அழைக்கவும் அல்லது WhatsApp மூலம் உடனே தொடர்பு கொள்ளவும்</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-4 col-md-6">
+        <div class="branch-card">
+          <div class="branch-ico">🏦</div>
+          <h5>முத்து பேங்கர்ஸ்</h5>
+          <p class="branch-detail"><i class="bi bi-geo-alt-fill"></i>5-142-2, திருமலைக்கோவில் மேயின் ரோடு, குத்துக்கல்வலை – தென்காசி</p>
+          <a class="branch-phone" href="tel:+918643022732"><i class="bi bi-telephone-fill" style="margin-right:6px"></i>86430 22732</a>
+          <br>
+          <a href="https://wa.me/918643022732" class="btn-wa" target="_blank"><i class="bi bi-whatsapp"></i>WhatsApp</a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="branch-card">
+          <div class="branch-ico">🏛️</div>
+          <h5>ஸ்ரீ பாலாஜி கைபனான்ஸ்</h5>
+          <p class="branch-detail"><i class="bi bi-geo-alt-fill"></i>144, சிவராமப்பட்டை ரோடு, பண்போழில்</p>
+          <a class="branch-phone" href="tel:+919345679428"><i class="bi bi-telephone-fill" style="margin-right:6px"></i>93456 79428</a>
+          <br>
+          <a href="https://wa.me/919345679428" class="btn-wa" target="_blank"><i class="bi bi-whatsapp"></i>WhatsApp</a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="branch-card">
+          <div class="branch-ico">🏪</div>
+          <h5>முத்து பேங்கர்ஸ்</h5>
+          <p class="branch-detail"><i class="bi bi-geo-alt-fill"></i>46/3, மேயின் ரோடு, போலீஸ் ஸ்டேஷன் அருகில், ஆயக்குடி</p>
+          <a class="branch-phone" href="tel:+918643810838"><i class="bi bi-telephone-fill" style="margin-right:6px"></i>86438 10838</a>
+          <br>
+          <a href="https://wa.me/918643810838" class="btn-wa" target="_blank"><i class="bi bi-whatsapp"></i>WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+   
+    <div class="footer-bottom">
+      <p>© 2026 <span>முத்து பேங்கர்ஸ்</span> | அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை</p>
+    </div>
+  </div>
+
+
+<!-- Scroll-to-top -->
+<a href="#hero" class="fab-top" id="fabTop" aria-label="மேலே செல்">
+  <i class="bi bi-chevron-up"></i>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>
