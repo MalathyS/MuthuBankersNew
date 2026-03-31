@@ -21,12 +21,12 @@
 
       <!-- LEFT: Logo -->
       <div class="nav-logo">
-        <img src="logo2_transparent.png" alt="Muthu Bankers">
+        <img src="images/logo2_transparent.png" alt="Muthu Bankers">
       </div>
 
       <!-- CENTER: Brand title image -->
       <div class="nav-brand-slot">
-        <img src="logo finalized@2x.png" alt="Muthu Bankers">
+        <img src="images/logo finalized@2x.png" alt="Muthu Bankers">
       </div>
 
       <!-- RIGHT: Badge + Hamburger -->
@@ -70,7 +70,7 @@
 
 <!-- Vinayagar — outside navbar, desktop only (hidden via CSS on mobile) -->
 <div class="vinayagar-hanging">
-  <img src="vinayagar.png" alt="Vinayagar">
+  <img src="images/vinayagar.png" alt="Vinayagar">
 </div>
 
 <!-- ════════ HERO ════════ -->
@@ -152,7 +152,7 @@
           <div class="about-visual">
             <div class="av-ring r1"></div>
             <div class="av-ring r2"></div>
-            <img src="cashforgold.png" class="av-img" alt="About us">
+            <img src="images/cashforgold.png" class="av-img" alt="About us">
           </div>
         </div>
         <div class="col-lg-7">
@@ -195,7 +195,7 @@
           <div class="about-visual">
             <div class="av-ring r1"></div>
             <div class="av-ring r2"></div>
-            <img src="consultation.png" class="av-img" alt="Diamond">
+            <img src="images/consultation.png" class="av-img" alt="Diamond">
           </div>
         </div>
       </div>
@@ -208,7 +208,7 @@
           <div class="about-visual">
             <div class="av-ring r1"></div>
             <div class="av-ring r2"></div>
-            <img src="steptosuccess.png" class="av-img" alt="About us">
+            <img src="images/steptosuccess.png" class="av-img" alt="About us">
           </div>
         </div>
         <div class="col-lg-7">
@@ -254,7 +254,7 @@
 <!--  ======== DEPOSIT ======== -->
  <section id="deposit">
   <div class="section-title text-center mb-4">
-  <h2>எங்களின் டெபாசிட் திட்டம்</h2>
+  <h2 class="sec-h2">எங்களின் டெபாசிட் திட்டம்</h2>
 
 </div>
     <div class="bento">
@@ -384,30 +384,56 @@
   </div>
 </section>
 
- <section id="review">
-      <h2 class="review-heading">உங்கள் நம்பிக்கை – எங்கள் பெருமை</h2>
-      <div class="review-container">
-        <div class="review-card">
-          <div class="stars" data-rating="5"></div>
-          <p>"மிகவும் நல்ல சேவை. வேகமாகவும் நம்பிக்கைக்குரியதாகவும் உள்ளது!"</p>
-          <h4>- ரவி</h4>
-        </div>
-        <div class="review-card">
-          <div class="stars" data-rating="4"></div>
-          <p>"சிறந்த நிதி சேவை. மிகவும் நட்பான அணுகுமுறை."</p>
-          <h4>- பிரியா</h4>
-        </div>
-        <div class="review-card">
-          <div class="stars" data-rating="5"></div>
-          <p>"15+ ஆண்டுகளாக அனுபவம் நிச்சயமாக தெரிகிறது!"</p>
-          <h4>- குமார்</h4>
-        </div>
+<section id="review">
+  <h2 class="review-heading">உங்கள் நம்பிக்கை – எங்கள் பெருமை</h2>
+
+  <!-- Review Carousel -->
+  <div class="review-carousel-wrap">
+    <button class="rev-arrow rev-prev" id="revPrev" aria-label="Previous">&#8249;</button>
+    <div class="rev-track-outer">
+      <div class="rev-track" id="revTrack">
+        <!-- injected by JS -->
+        <div class="rev-loading">கருத்துகள் ஏற்றப்படுகின்றன…</div>
       </div>
-      <br>
-      <p class="one-line">நம்பிக்கையுடன் அடகு வையுங்கள் – இன்று பணம் பெறுங்கள்!</p>
-      <br>
-      <div class="handshake">🤝</div>
-    </section>
+    </div>
+    <button class="rev-arrow rev-next" id="revNext" aria-label="Next">&#8250;</button>
+  </div>
+  <!-- Dots -->
+  <div class="rev-dots" id="revDots"></div>
+
+  <!-- Add Review Button -->
+  <div class="text-center mt-4">
+    <button class="btn-add-review" onclick="openReviewModal()">✍️ உங்கள் கருத்தை பதிவிடுங்கள்</button>
+  </div>
+
+  <p class="one-line" style="margin-top:32px">நம்பிக்கையுடன் அடகு வையுங்கள் – இன்றே பணம் பெறுங்கள்!</p>
+  <div class="handshake">🤝</div>
+</section>
+
+<!-- ══ ADD REVIEW MODAL ══ -->
+<div class="rev-modal-overlay" id="revModalOverlay" onclick="closeReviewModal(event)">
+  <div class="rev-modal">
+    <button class="rev-modal-close" onclick="closeReviewModal()">✕</button>
+    <h3 class="rev-modal-title">உங்கள் கருத்தை பதிவிடுங்கள்</h3>
+    <div class="rev-modal-body">
+      <label>பெயர் *</label>
+      <input type="text" id="revName" placeholder="உங்கள் பெயர்" maxlength="60">
+
+      <label>மதிப்பீடு *</label>
+      <div class="rev-star-input" id="revStarInput">
+        <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span>
+        <span data-v="4">★</span><span data-v="5">★</span>
+      </div>
+      <input type="hidden" id="revStarVal" value="0">
+
+      <label>கருத்து *</label>
+      <textarea id="revText" rows="4" placeholder="உங்கள் அனுபவத்தை பகிருங்கள்…" maxlength="300"></textarea>
+
+      <button class="rev-submit-btn" id="revSubmitBtn" onclick="submitReview()">சமர்ப்பிக்கவும்</button>
+      <p class="rev-msg" id="revMsg"></p>
+    </div>
+  </div>
+</div>
 
 <!-- ════════ CONTACT + FOOTER ════════ -->
 <section id="contact">
@@ -423,7 +449,7 @@
         <div class="branch-card">
           <div class="branch-ico">🏦</div>
           <h5>முத்து பேங்கர்ஸ்</h5>
-          <p class="branch-detail"><i class="bi bi-geo-alt-fill"></i>5-142-2, திருமலைக்கோவில் மேயின் ரோடு, குத்துக்கல்வலை – தென்காசி</p>
+          <p class="branch-detail"><i class="bi bi-geo-alt-fill"></i>5-142-2, திருமலைக்கோவில் மெயின் ரோடு, குத்துக்கல்வலசை – தென்காசி</p>
           <a class="branch-phone" href="tel:+918643022732"><i class="bi bi-telephone-fill" style="margin-right:6px"></i>86430 22732</a>
           <br>
           <a href="https://wa.me/918643022732" class="btn-wa" target="_blank"><i class="bi bi-whatsapp"></i>WhatsApp</a>
@@ -432,8 +458,8 @@
       <div class="col-lg-4 col-md-6">
         <div class="branch-card">
           <div class="branch-ico">🏛️</div>
-          <h5>ஸ்ரீ பாலாஜி கைபனான்ஸ்</h5>
-          <p class="branch-detail"><i class="bi bi-geo-alt-fill"></i>144, சிவராமப்பட்டை ரோடு, பண்போழில்</p>
+          <h5>ஸ்ரீ பாலாஜி பைனான்ஸ்</h5>
+          <p class="branch-detail"><i class="bi bi-geo-alt-fill"></i>144, சிவராமப்பட்டை ரோடு, பண்பொழில்</p>
           <a class="branch-phone" href="tel:+919345679428"><i class="bi bi-telephone-fill" style="margin-right:6px"></i>93456 79428</a>
           <br>
           <a href="https://wa.me/919345679428" class="btn-wa" target="_blank"><i class="bi bi-whatsapp"></i>WhatsApp</a>
@@ -443,7 +469,7 @@
         <div class="branch-card">
           <div class="branch-ico">🏪</div>
           <h5>முத்து பேங்கர்ஸ்</h5>
-          <p class="branch-detail"><i class="bi bi-geo-alt-fill"></i>46/3, மேயின் ரோடு, போலீஸ் ஸ்டேஷன் அருகில், ஆயக்குடி</p>
+          <p class="branch-detail"><i class="bi bi-geo-alt-fill"></i>46/3, மெயின் ரோடு, போலீஸ் ஸ்டேஷன் அருகில், ஆய்க்குடி</p>
           <a class="branch-phone" href="tel:+918643810838"><i class="bi bi-telephone-fill" style="margin-right:6px"></i>86438 10838</a>
           <br>
           <a href="https://wa.me/918643810838" class="btn-wa" target="_blank"><i class="bi bi-whatsapp"></i>WhatsApp</a>
