@@ -49,29 +49,40 @@ function toggleFaq(qEl) {
 ═══════════════════════════════════════════════════ */
 async function fetchGoldRate() {
   const elems = document.getElementsByClassName("goldRate");
-  if(!elems.length) return;
+  if (!elems.length) return;
+
   try {
     const today     = new Date().toISOString().split('T')[0];
     const savedDate = localStorage.getItem("gold_date");
     const savedRate = localStorage.getItem("gold_rate");
-    if(savedDate === today && savedRate){
+
+    if (savedDate === today && savedRate) {
       Array.from(elems).forEach(e => e.innerText = "Rs " + savedRate + " / gram");
       return;
     }
-    const res  = await fetch("https://www.goldapi.io/api/XAU/INR",
-      { headers:{ "x-access-token":"goldapi-19o1g6smlyro24y-io" }});
-    if(!res.ok) throw new Error("API Error");
-    const data = await res.json();
-    const rate = Math.round(data.price / 31.1035);
+
+    // ✅ Correct base URL: api.gold-api.com
+    const goldRes  = await fetch("https://api.gold-api.com/price/XAU");
+    const goldData = await goldRes.json();
+    const priceUSD = goldData.price; // USD per troy ounce
+
+    // Free currency API — no key needed
+    const fxRes    = await fetch("https://api.frankfurter.app/latest?from=USD&to=INR");
+    const fxData   = await fxRes.json();
+    const usdToInr = fxData.rates.INR;
+
+    // ounce → gram, USD → INR
+    const rateInr = Math.round((priceUSD / 31.1035) * usdToInr);
+
     localStorage.setItem("gold_date", today);
-    localStorage.setItem("gold_rate", rate);
-    Array.from(elems).forEach(e => e.innerText = "Rs " + rate + " / gram");
+    localStorage.setItem("gold_rate", rateInr);
+    Array.from(elems).forEach(e => e.innerText = "Rs " + rateInr + " / gram");
+
   } catch {
     const r = localStorage.getItem("gold_rate") || "----";
     Array.from(elems).forEach(e => e.innerText = "Rs " + r + " / gram");
   }
 }
-
 /* ═══════════════════════════════════════════════════
    BANNER CAROUSEL
 ═══════════════════════════════════════════════════ */
